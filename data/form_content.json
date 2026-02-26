@@ -1,0 +1,20 @@
+{
+    "cover_page": {
+        "enabled": true,
+        "title": "\ud83c\udf93 Project Allocation",
+        "background_color": "#006cfa",
+        "text_color": "#0a0a0a"
+    },
+    "form_header": {
+        "contact_email": "coal@university.edu",
+        "description": "Please fill in all required fields...",
+        "show_contact": false,
+        "title": "Project Selection Form"
+    },
+    "instructions": {
+        "additional_notes": "",
+        "content": "Default instructions...",
+        "enabled": true,
+        "title": "\u2139\ufe0f Instructions & Guidelines"
+    }
+}

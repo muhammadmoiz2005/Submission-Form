@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Projects Portal</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar - hidden if short_url_mode is True -->
+            {% if not short_url_mode %}
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky pt-3">
+                    <div class="text-center mb-4">
+                        <div class="display-1">🎓</div>
+                        <h5 class="text-light">Academic Portal</h5>
+                    </div>
+                    <hr>
+                    <ul class="nav flex-column" id="sidebar-nav">
+                        <!-- Dynamic links injected by main.js -->
+                    </ul>
+                    <hr>
+                    <div id="sidebar-footer" class="small text-secondary text-center"></div>
+                </div>
+            </nav>
+            {% endif %}
+
+            <!-- Main content - full width if sidebar hidden -->
+            <main class="{% if short_url_mode %}col-md-12{% else %}col-md-9 ms-sm-auto col-lg-10{% endif %} px-md-4">
+                <!-- Toast container for notifications -->
+                <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+                <!-- No top bar in short URL mode as requested -->
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Common JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- Page-specific JS will be loaded via blocks -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>

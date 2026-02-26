@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom border-secondary">
+    <h1 class="h2">Admin Dashboard</h1>
+    <button id="logout-btn" class="btn btn-outline-danger">Logout</button>
+    <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+</div>
+
+<!-- Section Navigation -->
+<ul class="nav nav-tabs" id="adminTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="short-urls-tab" data-bs-toggle="tab" data-bs-target="#short-urls" type="button" role="tab">🔗 Short URLs</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="form-settings-tab" data-bs-toggle="tab" data-bs-target="#form-settings" type="button" role="tab">📝 Form Settings</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button" role="tab">📋 Projects</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="groups-tab" data-bs-toggle="tab" data-bs-target="#groups" type="button" role="tab">👥 Groups</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="archived-tab" data-bs-toggle="tab" data-bs-target="#archived" type="button" role="tab">🗂️ Archived</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="export-tab" data-bs-toggle="tab" data-bs-target="#export" type="button" role="tab">📊 Export</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="file-submissions-tab" data-bs-toggle="tab" data-bs-target="#file-submissions" type="button" role="tab">📁 File Submissions</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="lab-manual-tab" data-bs-toggle="tab" data-bs-target="#lab-manual" type="button" role="tab">📚 Lab Manual</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="class-assignments-tab" data-bs-toggle="tab" data-bs-target="#class-assignments" type="button" role="tab">📘 Class Assignments</button>
+    </li>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="change-password-tab" data-bs-toggle="tab" data-bs-target="#change-password" type="button" role="tab">🔐 Change Password</button>
+    </li>
+</ul>
+
+<!-- Tab Content -->
+<div class="tab-content" id="adminTabContent">
+    <div class="tab-pane fade show active" id="short-urls" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="short-urls-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="form-settings" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="form-settings-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="projects" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="projects-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="groups" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="groups-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="archived" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="archived-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="export" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="export-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="file-submissions" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="file-submissions-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="lab-manual" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="lab-manual-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="class-assignments" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="class-assignments-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="system-config" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="system-config-content">Loading...</div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="change-password" role="tabpanel">
+        <div class="card mt-3">
+            <div class="card-body" id="change-password-content">Loading...</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+{% endblock %}

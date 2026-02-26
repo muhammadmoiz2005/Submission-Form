@@ -1,0 +1,36 @@
+{
+    "max_members": 0,
+    "next_group_number": 2,
+    "form_published": false,
+    "base_url": "http://127.0.0.1:5000/",
+    "form_mode": "class_assignment",
+    "allow_allocation_edit": false,
+    "project_file_submission_open": true,
+    "lab_manual_open": false,
+    "lab_file_upload_required": false,
+    "class_assignment_open": false,
+    "course_name": "",
+    "lab_subject_name": "",
+    "current_assignment_no": 1,
+    "project_allocation_project_optional": false,
+    "tab_visibility": {
+        "project_allocation": {
+            "form": false,
+            "allocations": false,
+            "instructions": false
+        },
+        "project_file_submission": {
+            "form": false,
+            "allocations": false,
+            "instructions": false
+        },
+        "lab_manual": {
+            "form": false,
+            "instructions": false
+        },
+        "class_assignment": {
+            "form": false,
+            "instructions": false
+        }
+    }
+}
